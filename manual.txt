@@ -1,0 +1,9 @@
+--команды для git
+--клонирование удаленного репозитория с нуля
+git clone https://github.com/Serg285/todoproject.git
+--добавление измененных файлов
+git add -A
+--создание коммитав локальном репозитории
+git commit -m "from home"
+--передача изменений на гитхаб в имя репозитория (origin) ветка main
+git push origin main
