@@ -1,0 +1,35 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+<div class="container text-center">
+<h1>Статус ежедневных backup БД серверов ВЦКП:</h1>
+<ul class="alert alert-success">
+    {% for i in all_items_vckp %}
+    <li>{{i.backup_status}}
+    </li>
+    {% endfor %}
+    <br>
+
+    <form action="/addBackupItem/" method = "post">{% csrf_token %}
+          <input type="submit" value="refresh">
+    </form>
+
+</ul>
+<br>
+<h1>Статус ежедневных backup БД серверов АДСУМС:</h1>
+ <h2>найдено {{error_count_adsums}} ошибок</h2>
+<ul class="alert alert-danger">
+    {% for i in all_items_adsums %}
+    <li>{{i.backup_status}}
+    </li>
+    {% endfor %}
+    <br>
+
+    <form action="/addBackupItemADSUMS/" method = "post">{% csrf_token %}
+          <input type="submit" value="refresh">
+    </form>
+
+</ul>
+
+<br>
+<br>
+<a href="{% url 'home' %}"> Home </a>
+</div>
