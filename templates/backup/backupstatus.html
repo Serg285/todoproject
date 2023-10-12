@@ -9,13 +9,15 @@
     <br>
 
     <form action="/addBackupItem/" method = "post">{% csrf_token %}
-          <input type="submit" value="refresh">
+          <input type="submit"  class="btn btn-link" value="refresh">
     </form>
 
 </ul>
 <br>
-<h1>Статус ежедневных backup БД серверов АДСУМС:</h1>
- <h2>найдено {{error_count_adsums}} ошибок</h2>
+<h2>Статус ежедневных backup БД серверов АДСУМС:</h2>
+ <div class="alert alert-primary" role="alert">
+   <h1>найдено {{error_count_adsums}} ошибок </h1>
+ </div>
 <ul class="alert alert-danger">
     {% for i in all_items_adsums %}
     <li>{{i.backup_status}}
@@ -24,7 +26,7 @@
     <br>
 
     <form action="/addBackupItemADSUMS/" method = "post">{% csrf_token %}
-          <input type="submit" value="refresh">
+          <input type="submit"  class="btn btn-link" value="refresh">
     </form>
 
 </ul>
