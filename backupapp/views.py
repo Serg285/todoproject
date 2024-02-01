@@ -60,8 +60,10 @@ def addBackupView(request):
         #  print(disk_list[i0] + ' найдено ' + str(i_fault) + ' ошибок')
         for i in range(n):
             path_b = path + '/' + contents[i]
+            #date_m = os.path.getmtime(path_b).strftime('%d.%m.%Y')
             date_m = os.path.getmtime(path_b)
-            date_m = datetime.date.today().strftime('%d.%m.%Y')
+            date_m = datetime.datetime.fromtimestamp(date_m)
+            date_m = date_m.strftime('%d.%m.%Y')
             #date_m = time.ctime(date_m)
             if localcurrentdate != date_m :
                 i_fault = i_fault + 1

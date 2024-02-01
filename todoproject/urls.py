@@ -19,6 +19,7 @@ from django.urls import path
 from todoapp.views import todoappView, addTodoView, deleteTodoView
 from backupapp.views import backupView, addBackupView,addBackupViewADSUMS, home, password1
 from generator.views import password
+from vckpapp.views import vckp_users
 
 urlpatterns = [
     path('', home, name = 'home'),
@@ -31,4 +32,5 @@ urlpatterns = [
     path('addBackupItemADSUMS/', addBackupViewADSUMS),
     path('generator/', password1, name = 'password1'),
     path('gen_result/', password, name = 'password'),
+    path('VckpAppUsers/',vckp_users , name = 'vckpappusers'),
 ]

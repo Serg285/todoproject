@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "todoapp",
     "backupapp",
     "generator",
+    "vckpapp",
 ]
 
 MIDDLEWARE = [

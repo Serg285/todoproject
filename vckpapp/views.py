@@ -3,9 +3,9 @@ from django.http import HttpResponse
 
 # Create your views here.
 
-def password(request):
+def vckp_users(request):
 
-    return render(request, 'generator\password.html', {'password':thepassword})
+    return render(request, 'vckp\vckp.html')
 
 def about(request):
     abouttxt='возврат на домашнюю страницу'
